@@ -4,11 +4,13 @@ import AboutSection from "@/components/AboutSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
 import ContactSection from "@/components/ContactSection";
+import MovingBackground from "@/components/MovingBackground";
 
 const Index = () => (
   <>
+    <MovingBackground />
     <Navbar />
-    <main>
+    <main className="relative z-10">
       <HeroSection />
       <AboutSection />
       <ProjectsSection />

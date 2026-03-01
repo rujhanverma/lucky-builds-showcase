@@ -18,7 +18,7 @@ const HeroSection = () => (
         >
           <p className="text-primary font-medium mb-2">Hey there, I'm</p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-4">
-            Lucky
+            Rujhan Verma
           </h1>
           <p className="text-lg text-muted-foreground max-w-md mx-auto md:mx-0 mb-8">
             B.Tech student & aspiring developer crafting clean, impactful web
@@ -50,7 +50,7 @@ const HeroSection = () => (
           <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden ring-4 ring-primary/20 shadow-lg">
             <img
               src={profilePhoto}
-              alt="Lucky - B.Tech Student & Developer"
+              alt="Rujhan Verma - B.Tech Student & Developer"
               className="w-full h-full object-cover"
             />
           </div>

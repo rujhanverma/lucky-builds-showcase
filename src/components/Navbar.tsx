@@ -27,7 +27,7 @@ const Navbar = () => {
     >
       <div className="section-container flex items-center justify-between h-16 px-6">
         <a href="#home" className="font-display text-xl font-bold text-foreground">
-          Lucky<span className="text-primary">.</span>
+          Rujhan<span className="text-primary">.</span>
         </a>
 
         {/* Desktop */}

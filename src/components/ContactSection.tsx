@@ -63,7 +63,7 @@ const ContactSection = () => (
       </motion.div>
 
       <p className="text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Lucky. Built with ♥
+        © {new Date().getFullYear()} Rujhan Verma. Built with ♥
       </p>
     </div>
   </section>

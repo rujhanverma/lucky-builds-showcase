@@ -4,24 +4,18 @@ import { Mail, Github, Linkedin, FileDown } from "lucide-react";
 const ContactSection = () => (
   <section id="contact" className="section-padding">
     <div className="section-container text-center">
-      <motion.h2
-        className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+      <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        Let's Connect
-      </motion.h2>
-      <motion.p
-        className="text-muted-foreground mb-10 max-w-md mx-auto"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
-      >
-        I'm always open to new opportunities, collaborations, or just a friendly
-        chat. Drop me a line!
-      </motion.p>
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-3">
+          Let's <span className="gradient-text">Connect</span> 🤙
+        </h2>
+        <p className="text-muted-foreground mb-10 max-w-md mx-auto">
+          Got a cool idea, collab, or just wanna say hi? I'm always down to chat!
+        </p>
+      </motion.div>
 
       <motion.div
         className="flex flex-wrap justify-center gap-4 mb-10"
@@ -32,15 +26,15 @@ const ContactSection = () => (
       >
         <a
           href="mailto:lucky@example.com"
-          className="flex items-center gap-2 bg-primary text-primary-foreground px-5 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity"
+          className="flex items-center gap-2 bg-gradient-to-r from-primary to-accent text-white px-6 py-3 rounded-full font-semibold hover-glow text-sm"
         >
-          <Mail size={18} /> Email Me
+          <Mail size={18} /> Email Me 📧
         </a>
         <a
           href="https://github.com/lucky"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 border border-border text-foreground px-5 py-3 rounded-lg font-medium hover:bg-secondary transition-colors"
+          className="flex items-center gap-2 glass rounded-full text-foreground px-6 py-3 font-semibold hover-glow text-sm"
         >
           <Github size={18} /> GitHub
         </a>
@@ -48,7 +42,7 @@ const ContactSection = () => (
           href="https://linkedin.com/in/lucky"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 border border-border text-foreground px-5 py-3 rounded-lg font-medium hover:bg-secondary transition-colors"
+          className="flex items-center gap-2 glass rounded-full text-foreground px-6 py-3 font-semibold hover-glow text-sm"
         >
           <Linkedin size={18} /> LinkedIn
         </a>
@@ -56,14 +50,14 @@ const ContactSection = () => (
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 border border-border text-foreground px-5 py-3 rounded-lg font-medium hover:bg-secondary transition-colors"
+          className="flex items-center gap-2 glass rounded-full text-foreground px-6 py-3 font-semibold hover-glow text-sm"
         >
           <FileDown size={18} /> Resume
         </a>
       </motion.div>
 
       <p className="text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Rujhan Verma. Built with ♥
+        © {new Date().getFullYear()} Rujhan Verma · made with 💜
       </p>
     </div>
   </section>

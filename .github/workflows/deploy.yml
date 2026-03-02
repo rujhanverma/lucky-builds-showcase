@@ -24,10 +24,21 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build
         run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Verify dist exists
+        run: |
+          if [ ! -f "dist/index.html" ]; then
+            echo "ERROR: dist/index.html not found! Build may have failed."
+            exit 1
+          fi
+          echo "Build successful. dist/index.html exists."
+          cat dist/index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

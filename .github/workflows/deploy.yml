@@ -17,27 +17,35 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: 20
-          cache: 'npm'
+          bun-version: latest
 
       - name: Install dependencies
-        run: npm install
+        run: bun install
 
       - name: Build
-        run: npm run build
+        run: bun run build
         env:
           NODE_ENV: production
 
-      - name: Verify dist exists
+      - name: Verify dist and assets
         run: |
+          echo "Checking dist folder structure..."
+          ls -R dist
           if [ ! -f "dist/index.html" ]; then
-            echo "ERROR: dist/index.html not found! Build may have failed."
+            echo "ERROR: dist/index.html not found!"
             exit 1
           fi
-          echo "Build successful. dist/index.html exists."
+          
+          echo "Verifying index.html content..."
+          if grep -q "/src/main.tsx" dist/index.html; then
+            echo "ERROR: dist/index.html still references /src/main.tsx! Build failed to transform index.html."
+            exit 1
+          fi
+          
+          echo "Build successful. index.html is transformed."
           cat dist/index.html
 
       - name: Setup Pages
